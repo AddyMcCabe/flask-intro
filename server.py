@@ -38,14 +38,14 @@ def say_hello():
           <input type="submit" value="Submit">
         </form>
       </body>
-    </html>
+    </html><a>
     """
 
 
 @app.route('/greet')
 def greet_person():
     """Get user by name."""
-
+    y = x
     player = request.args.get("person")
 
     compliment = choice(AWESOMENESS)
