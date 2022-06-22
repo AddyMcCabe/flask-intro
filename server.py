@@ -45,7 +45,7 @@ def say_hello():
 @app.route('/greet')
 def greet_person():
     """Get user by name."""
-    y = x
+    
     player = request.args.get("person")
 
     compliment = choice(AWESOMENESS)
