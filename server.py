@@ -13,6 +13,9 @@ AWESOMENESS = [
     'oh-so-not-meh', 'brilliant', 'ducky', 'coolio', 'incredible',
     'wonderful', 'smashing', 'lovely']
 
+TERRIBLENESS = [
+    'terrible', 'horrible', 'awful', 'dire', 'abhorrent', 'appalling'
+]
 
 @app.route('/')
 def start_here():
@@ -62,6 +65,24 @@ def greet_person():
     </html>
     """
 
+@app.route('/diss')
+def diss_person():
+
+  player = request.args.get("person")
+
+  insult = choice(TERRIBLENESS)
+
+  return f"""
+  <!doctype html>
+  <html>
+    <head>
+      <title>A Compliment</title>
+    </head>
+    <body>
+      Hi, {player}! I think you're {insult}!
+    </body>
+  </html>
+  """
 
 if __name__ == '__main__':
     # debug=True gives us error messages in the browser and also "reloads"
